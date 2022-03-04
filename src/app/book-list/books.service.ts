@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { booksReducer } from '../state/books.reducer';
 import { Book } from './books.model';
 
 @Injectable({
