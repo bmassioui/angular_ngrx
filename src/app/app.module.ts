@@ -7,6 +7,8 @@ import { booksReducer } from './state/books.reducer';
 import { collectionReducer } from './state/collection.reducer';
 import { BookListComponent } from './book-list/_components/book-list/book-list.component';
 import { BookCollectionComponent } from './book-list/_components/book-collection/book-collection.component';
+import { GoogleBooksService } from './book-list/books.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { BookCollectionComponent } from './book-list/_components/book-collection
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot({books : booksReducer, collection : collectionReducer}) // The StoreModule.forRoot() method registers the global providers needed to access the Store throughout your application.
   ],
-  providers: [],
+  providers: [GoogleBooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
