@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { GoogleBooksService } from './book-list/books.service';
@@ -13,7 +12,7 @@ import { selectBookCollection, selectBooks } from './state/books.selectors';
 export class AppComponent implements OnInit {
   title = 'Angular Ngrx';
   books$ = this.store.select(selectBooks);
-  bookCollection$ = this.store.select(selectBookCollection);
+  bookCollection$ = this.store.select(selectBookCollection)!;
 
   constructor(private booksService: GoogleBooksService, private store: Store) { }
 
