@@ -16,9 +16,6 @@ export class AppComponent implements OnInit {
 
   constructor(private booksService: GoogleBooksService, private store: Store) { }
 
-  
-
-
   /**
    * Add Book
    * @param bookId 
