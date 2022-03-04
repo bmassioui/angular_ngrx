@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Book } from './book-list/books.model';
 import { GoogleBooksService } from './book-list/books.service';
 import { addBook, removeBook, retrieveBookList } from './state/books.actions';
 import { selectBookCollection, selectBooks } from './state/books.selectors';
@@ -12,7 +14,7 @@ import { selectBookCollection, selectBooks } from './state/books.selectors';
 export class AppComponent implements OnInit {
   title = 'Angular Ngrx';
   books$ = this.store.select(selectBooks);
-  bookCollection$ = this.store.select(selectBookCollection)!;
+  bookCollection$ = this.store.select(selectBookCollection);
 
   constructor(private booksService: GoogleBooksService, private store: Store) { }
 
