@@ -13,7 +13,7 @@ import { collectionReducer } from './state/collection.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({books : booksReducer, collection : collectionReducer})
+    StoreModule.forRoot({books : booksReducer, collection : collectionReducer}) // The StoreModule.forRoot() method registers the global providers needed to access the Store throughout your application.
   ],
   providers: [],
   bootstrap: [AppComponent]
